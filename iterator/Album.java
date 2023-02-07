@@ -39,7 +39,7 @@ public class Album {
     }
     /**
      * Creating a collection to hold the songs
-     * @return a new collection
+     * @return a new collection for the album
      */
     public AlbumIterator createIterator() {
         return new AlbumIterator(songs);
