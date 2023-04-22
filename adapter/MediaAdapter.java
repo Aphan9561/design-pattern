@@ -12,7 +12,10 @@ import java.util.Date;
  */
 public class MediaAdapter implements Media {
     private LittleMedia littleMedia;
-
+    /**
+     * Creates a new mediaAdapter for ever littleMedia
+     * @param littleMedia the type of little media
+     */
     public MediaAdapter(LittleMedia littleMedia) {
         this.littleMedia = littleMedia;
     }
@@ -42,13 +45,23 @@ public class MediaAdapter implements Media {
     public String getDescription() {
         return littleMedia.getDescription();
     }
-    
+    /**
+     * The addReview from little media
+     * @param firstName first name of the reviewer
+     * @param lastName last name of the reviewer
+     * @param date date of the review
+     * @param rating rating of the review
+     * @param comment the review comment
+     */
     public void addReview(String firstName, String lastName, Date date, double rating, String comment) {
         String fullName = firstName + " " + lastName;
         int rate = (int) Math.round(rating);
         littleMedia.addReview(fullName, date, rate, comment);
     }
-    
+    /**
+     * Get the reviews from little media
+     * @return the reviews from little media
+     */
     public ArrayList<Review> getReviews() {
         ArrayList<String> reviews = littleMedia.getReviews();
         ArrayList<Review> newReivews = new ArrayList<Review>();
