@@ -14,7 +14,7 @@ public class LittleBook implements LittleMedia {
         this.title = title;
         this.author = author;
         this.description = description;
-        reviews = new ArrayList();
+        reviews = new ArrayList<>();
     }
 
     public String getTitle() {
