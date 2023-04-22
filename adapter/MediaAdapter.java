@@ -68,20 +68,19 @@ public class MediaAdapter implements Media {
         SimpleDateFormat dateFormatter = new SimpleDateFormat("MM/dd/yyyy");
         for (int i = 0; i < reviews.size(); i++) {
             Review review;
-            String data = reviews.get(i);
-            String temp[] = data.split(" ");
-            int length = temp.length;
-            double rating = Double.parseDouble(temp[0]);
+            String data[] = reviews.get(i).split(" ");
+            int length = data.length;
+            double rating = Double.parseDouble(data[0]);
             String[] sentence = new String[(length - 5) - 3];
             int k = 0;
             for (int j = 3; j < length - 5; j++) {
-                sentence[k] = temp[j];
+                sentence[k] = data[j];
                 k++;
             }
             String comment = String.join(" ", sentence);
-            String firstName = temp[length - 4];
-            String lastName = temp[length - 3];
-            String tempDate = temp[length - 1];
+            String firstName = data[length - 4];
+            String lastName = data[length - 3];
+            String tempDate = data[length - 1];
             Date date;
             try {
                 date = dateFormatter.parse(tempDate);
