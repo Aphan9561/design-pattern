@@ -81,11 +81,9 @@ public class MediaAdapter implements Media {
             String firstName = data[length - 4];
             String lastName = data[length - 3];
             String tempDate = data[length - 1];
-            Date date;
             try {
-                date = dateFormatter.parse(tempDate);
-                review = new Review(firstName, lastName, date, rating, comment);
-                newReivews.add(review);
+                Date date = dateFormatter.parse(tempDate);
+                newReivews.add(new Review(firstName, lastName, date, rating, comment));
             } catch (ParseException e) {
                 e.printStackTrace();
             }
